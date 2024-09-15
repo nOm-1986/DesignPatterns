@@ -24,6 +24,8 @@ func GetFurnitureFactory(factoryType string) (IFurnitureFactory, error) {
 		return &Modern{}, nil
 	case ArtdecoFactoryType:
 		return &Deco{}, nil
+	case VictorianFactoryType:
+		return &Victorian{}, nil
 	default:
 		return nil, errors.New("unsuported notification type")
 	}

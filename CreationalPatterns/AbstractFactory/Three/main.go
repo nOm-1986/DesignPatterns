@@ -18,6 +18,7 @@ func main() {
 		factory.PrintChairDetails(moderChair)
 		factory.PrintSofaDetails(moderSofa)
 		factory.PrintTableDetails(moderTable)
+		fmt.Println("+++++++++++++++++++++++++++++++++++")
 	}
 
 	decoFactory, err := factory.GetFurnitureFactory("artdeco")
@@ -31,5 +32,20 @@ func main() {
 		factory.PrintChairDetails(decoChair)
 		factory.PrintSofaDetails(decoSofa)
 		factory.PrintTableDetails(decoTable)
+		fmt.Println("+++++++++++++++++++++++++++++++++++")
+	}
+
+	victorianaFactory, err := factory.GetFurnitureFactory("victorian")
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		vicChair := victorianaFactory.MakeChair()
+		vicSofa := victorianaFactory.MakeSofa()
+		vicTable := victorianaFactory.MakeTable()
+
+		factory.PrintChairDetails(vicChair)
+		factory.PrintSofaDetails(vicSofa)
+		factory.PrintTableDetails(vicTable)
+		fmt.Println("+++++++++++++++++++++++++++++++++++")
 	}
 }
