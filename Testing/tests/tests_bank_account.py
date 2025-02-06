@@ -1,13 +1,16 @@
-import unittest
+import unittest, os
 # from src.ba
 from src.bank_account import BankAccount
 
 class BankAccountTests(unittest.TestCase):
     # setUp se ejecuta siempre antes de hacer una prueba, es como un constructor ak podemos crear la instancia
     def setUp(self):
-        self.account = BankAccount(1000)
+        self.account = BankAccount(1000, log_file="transaction_log.txt")
     
     # tearDown se ejecuta al final
+    def tearDown(self):
+        if os.path.exists(self.account.log_file):
+            os.remove(self.account.log_file)
 
     def test_deposit(self):
         #account = BankAccount(1000)
@@ -34,3 +37,17 @@ class BankAccountTests(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             self.account.transfer(2000, target)
         self.assertEqual(str(context.exception), "You do not have enough money")
+
+    def test_transaction_log(self):
+        assert self.account.deposit(500)
+        assert os.path.exists(self.account.log_file)
+    
+    def test_count_transactions(self):
+        assert self._count_lines(self.account.log_file) == 1
+        self.account.deposit(100)
+        assert self._count_lines(self.account.log_file) == 2
+
+
+    def _count_lines(self, filename):
+        with open(filename, 'r') as f:
+            return len(f.readlines())
