@@ -1,4 +1,8 @@
-import unittest
+import unittest, os
+from dotenv import load_dotenv 
+
+load_dotenv()
+SERVER = os.getenv("SERVER")
 
 class AllAssertsTests(unittest.TestCase):
     
@@ -29,3 +33,16 @@ class AllAssertsTests(unittest.TestCase):
             {1,2,3},
             {1,2,3}
         )
+    
+    #Decorador skip
+    @unittest.skip('Trabajo en progreso, será habilitada nuevamente.')
+    def test_skip(self):
+        self.assertEqual(True, 1)
+
+    @unittest.skipIf(SERVER == "server_a", "Saltado porque no estamos en el servidor A")
+    def test_skip_if(self):
+        self.assertEqual(100, 100)
+
+    @unittest.expectedFailure
+    def test_expected_failure(self):
+        self.assertEqual(1, 2)
