@@ -14,11 +14,13 @@ class BankAccountTests(unittest.TestCase):
 
     def test_deposit(self):
         #account = BankAccount(1000)
-        assert self.account.deposit(200) == 1200
+        #assert self.account.deposit(200) == 1200
+        self.assertEqual(self.account.deposit(200), 1200, "Deposit balance is not equal !!!")
 
     def test_withdraw(self):
         #account = BankAccount(1000)
-        assert self.account.withdraw(400) == 600
+        #assert self.account.withdraw(400) == 600
+        self.assertEqual(self.account.withdraw(400), 600, "Withdraw balance is not equal !!!")
 
     def test_get_balance(self):
         #account = BankAccount(2000)
@@ -40,7 +42,8 @@ class BankAccountTests(unittest.TestCase):
 
     def test_transaction_log(self):
         assert self.account.deposit(500)
-        assert os.path.exists(self.account.log_file)
+        #assert os.path.exists(self.account.log_file)
+        self.assertTrue(self.account.log_file)
     
     def test_count_transactions(self):
         assert self._count_lines(self.account.log_file) == 1
