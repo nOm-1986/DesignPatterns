@@ -1,6 +1,9 @@
 .env
 
+__pycache__
+
 Testing/src/__pycache__
 Testing/tests/__pycache__
+POO/venv_poo/
 
 Testing/venv_testing
