@@ -13,3 +13,19 @@ class Person:
         if self.age >= 18:
             return True
         return False
+
+    #Setters and Getters
+    def get_name(self):
+        return self.name
+    
+    def set_name(self, name):
+        self.name = name
+
+    def get_age(self):
+        return self.age
+    
+    def set_age(self, age: int):
+        if type(age) == int:
+            self.age = age
+        else:
+            raise ValueError('Please, Put a #$#@$%^@ number')

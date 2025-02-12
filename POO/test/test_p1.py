@@ -5,7 +5,7 @@ class PersonTests(unittest.TestCase):
     def setUp(self):
         self.person = Person('Fabian', 38)
 
-    def test_greeting(self):
+    def test_greeting_string_name(self):
         self.assertEqual(self.person.greeting(), 'Hello Fabian')
 
     def test_is_of_legal_age(self):
