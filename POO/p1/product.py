@@ -19,7 +19,7 @@ class Product:
     
     @name.setter
     def name(self, name: str):
-        self._name = name
+        self.__name = name
     
     @property
     def price(self) -> int:
@@ -38,4 +38,4 @@ class Product:
     
 
 p1 = Product(1, "Orthopedic Mattress",  500)
-print(p1.calculate_total(20))
+print(type(p1.name))
