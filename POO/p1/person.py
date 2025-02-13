@@ -1,10 +1,10 @@
 class Person:
     def __init__(self, name: str, age: int):
-        self.name = name
+        self._name = name
         self.age = age
 
     def greeting(self):
-        return "Hello " + self.name
+        return "Hello " + self._name
     
     def show_age(self):
         return self.age
@@ -15,11 +15,22 @@ class Person:
         return False
 
     #Setters and Getters
+    """
     def get_name(self):
         return self.name
     
     def set_name(self, name):
         self.name = name
+    Forma Pro de hacer Getters y Setters
+    @property
+    """
+    @property
+    def name(self):
+        return self._name
+    
+    @name.setter
+    def name(self, name):
+        self._name = name
 
     def get_age(self):
         return self.age

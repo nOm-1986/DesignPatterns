@@ -27,7 +27,10 @@ class Product:
     
     @price.setter
     def price(self, valor: int):
-        self.__price = valor
+        if valor > 0:
+            self.__price = valor
+        else:
+            raise ValueError('Price can not be less than one mf...')
 
     def calculate_total(self, amount: int) -> int:
         return amount * self.__price
@@ -35,7 +38,29 @@ class Product:
     #ToString del objeto
     def __str__(self):
         return f"Information about your product: ID {self.__id}, Name: {self.__name}, Price: {self.__price}"
+
+
+class Pedido:
+    def __init__(self, products: Product, cantidad: int):
+        self.__products = products
+        self.__cuantity = cantidad
+    
+    def total_pedido(self):
+        total = 0
+        for (p, c) in zip(self.__products, self.__cuantity):
+            total += p.calculate_total(c)
+        return total
+
+    def mostrar_pedido(self):
+        for (p, c) in zip(self.__products, self.__cuantity):
+            print(f"Producto: {p.name}, valor: {p.price}. cantidad {c}")
     
 
 p1 = Product(1, "Orthopedic Mattress",  500)
-print(type(p1.name))
+p2 = Product(2, "Pillow",  25)
+p3 = Product(3, "Basement bed",  80)
+produc_list = [p1, p2, p3]
+cuantity = [2,4,6]
+pedido1 = Pedido(produc_list, cuantity)
+total = pedido1.total_pedido()
+print(total)

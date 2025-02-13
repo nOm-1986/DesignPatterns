@@ -13,3 +13,8 @@ class PersonTests(unittest.TestCase):
 
     def test_age(self):
         self.assertEqual(self.person.show_age(),38)
+
+    def test_name(self):
+        self.assertEqual(self.person.name, 'Fabian')
+        new_name = self.person.name = 'Majo'
+        self.assertEqual(new_name,  'Majo')
