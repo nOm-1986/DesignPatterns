@@ -91,6 +91,7 @@ if __name__ == "__main__":
         pedido1.add_produc(p2, 5)
         pedido1.add_produc(p3, 5)
         total = pedido1.total_pedido()
+        pedido1.mostrar_pedido()
         print(total)
 
     except Exception as e:
