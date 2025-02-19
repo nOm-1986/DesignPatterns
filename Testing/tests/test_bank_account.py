@@ -50,6 +50,17 @@ class BankAccountTests(unittest.TestCase):
         self.account.deposit(100)
         assert self._count_lines(self.account.log_file) == 2
 
+    def test_deposit_varios_ammounts(self):
+        test_cases = [
+            {"amount": 100, "expected": 1100},
+            {"amount": 3000, "expected": 4000},
+            {"amount": 2400, "expected": 3400},
+        ]
+        for case in test_cases:
+            with self.subTest(case=case):
+                self.account = BankAccount(balance=1000, log_file="transaction.txt")
+                new_balance = self.account.deposit(case["amount"])
+                self.assertEqual(new_balance, case["expected"])
 
     def _count_lines(self, filename):
         with open(filename, 'r') as f:

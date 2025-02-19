@@ -7,7 +7,7 @@ def get_location(ip):
     data = response.json()
     return {
         "countryName" : data["countryName"],
-        "countryCode" : data["countryCode"]
+        "countryCode" : data["countryCode"],
     }
 
 if __name__ == "__main__":
