@@ -1,4 +1,4 @@
-import unittest
+import unittest, requests
 from src.api_client import get_location
 from unittest.mock import patch
 
@@ -26,7 +26,7 @@ class ApiClientTests(unittest.TestCase):
         mock_get.return_value.status_code = 200
         mock_get.return_value.json.return_value = {
             "countryName" : "Colombia",
-            "countryCode" : "CO"
+            "countryCode" : "CO",
         }
         result = get_location("186.103.48.124")
         self.assertEqual(
@@ -34,5 +34,28 @@ class ApiClientTests(unittest.TestCase):
         )
 
         #Que este haciendo el llamado a la URL correcta. Que la URL Exista
-        mock_get.assert_called_once_with("https://freeipapi.com/api/json/186.103.48.123")
+        mock_get.assert_called_once_with("https://freeipapi.com/api/json/186.103.48.124")
+
+    
+    # En este test la idea es hacer que falle en el primero y que pase al segundo llamado
+    @patch('src.api_client.requests.get')
+    def test_get_location_returns_side_effect(self, mock_get):
+        mock_get.side_effect = [
+            requests.exceptions.RequestException("Service Unavailable"),
+        ]
+        mock_get.return_value.status_code = 200
+        mock_get.return_value.json.return_value = {
+            "countryName" : "Colombia",
+            "countryCode" : "CO"
+        }
+
+        with self.assertRaises(requests.exceptions.RequestException):
+            result = get_location("186.103.48.124")
+
+        result = get_location("186.103.48.124")
+        self.assertEqual(
+            result.get("countryName"), "Colombia",
+            result.get("countryCode"), "CO"
+        )
+
         
