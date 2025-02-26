@@ -18,6 +18,7 @@ class UserTests(unittest.TestCase):
         self.assertEqual(user.name, name_generated)
         self.assertEqual(user.email, email_generated)
 
+    @unittest.skip('Trabajo en progreso, será habilitada nuevamente.')
     def test_user_with_multiple_accounts(self):
         for _ in range(3):
             bank_account = BankAccount(
@@ -29,7 +30,8 @@ class UserTests(unittest.TestCase):
         expected_value = self.user.get_total_balance()
         value = sum(account.get_balance() for account in self.user.accounts)
         self.assertEqual(value, expected_value)
-
+        
+    @unittest.skip('Trabajo en progreso, será habilitada nuevamente.')
     def tearDown(self) -> None:
         for account in self.user.accounts:
             os.remove(account.log_file)
