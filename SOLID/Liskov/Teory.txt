@@ -1,0 +1,24 @@
+SOLID
+
+L --> Liskov Sustitution Principle LSP -- Principio de Sustitución de Liskov
+
+"Las subclases deben ser sustituibles por sus clases base" -- Barbara Liskov
+
+Importancia
+    Evita comportamientos inesperados al usar subclases
+    Asegura la coherencia y la correcta ejecución del programa
+
+
+Características
+    Las subclases deben respetar el contrato de la clase base
+    Mantener la compatibilidad de interfaces y tipos
+    No introducir excepciones inesperadas
+
+Beneficios
+    Reutilización de código
+    Mantener la compatibilidad de interfaces y tipos
+    Reducción de errores en tiempo de ejecución
+
+Cuando aplicarlo?
+    Violación de precondiciones o postcondiciones
+    Excepciones inesperadas en subclases
