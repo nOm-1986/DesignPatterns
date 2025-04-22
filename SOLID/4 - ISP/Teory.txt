@@ -1,3 +1,17 @@
 SOLID
 
-I -- Interface Segregation Principle
+I -- Interface Segregation Principle -- Principio de Segregacion de interfaces -- ISP
+
+" Los clientes no debería verse obligados a depender de interfaces que no utilizan" Robert C. Mertin
+
+Ventajas:
+
+-   Mejora la cohesión y reduce el acoplamiento.
+-   Reutilización de componentes
+-   Cambios en una interfaz no afectan a otras clases
+-   Facilita la cerración de pruebas unitarias
+
+Cuándo aplicarlo???
+-   Interfaces con demasiados métodos irrelevantes
+-   Clases que no utilizan métodos de una interfaz
+-   Cambios en la interfaz afectan a muchas clases
