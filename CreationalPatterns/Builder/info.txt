@@ -1,0 +1,6 @@
+PATRÓN CREACIONAL --- BUILDER
+
+Es un patrón de diseño que se utiliza para simplificar la construcción de objetos complejos.
+
+Simplify the construction of complex objects
+It separates the construction of the object from its representation.
