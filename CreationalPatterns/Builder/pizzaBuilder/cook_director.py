@@ -5,4 +5,4 @@ class Cook:
         builder.set_dough()
         builder.set_sauce()
         builder.set_topping()
-        return builder.pizza
+        return builder._pizza
