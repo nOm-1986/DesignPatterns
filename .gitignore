@@ -7,3 +7,5 @@ Testing/tests/__pycache__
 POO/venv_poo/
 SOLID/venv_solid
 Testing/venv_testing
+
+*.png
