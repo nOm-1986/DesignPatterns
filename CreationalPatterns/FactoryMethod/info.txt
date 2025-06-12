@@ -1,0 +1,11 @@
+"Factory Method es un patrón de diseño creacional que proporciona una interfaz para crear objetos 
+en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.
+" - Refactoring Guru
+
+Problema:
+Imagina que estás creando una aplicación de gestión logística. La primera versión de tu aplicación 
+sólo es capaz de manejar el transporte en camión, por lo que la mayor parte de tu código se encuentra 
+dentro de la clase Camión.
+
+Al cabo de un tiempo, tu aplicación se vuelve bastante popular. Cada día recibes decenas de peticiones 
+de empresas de transporte marítimo para que incorpores la logística por mar a la aplicación.
