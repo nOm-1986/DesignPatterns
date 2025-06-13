@@ -3,7 +3,7 @@ from tabulate import tabulate
 
 class ReporteMesBuilder(ReporteBuilder):
 
-    def agregar_encabezado(self, mes, anio):
+    def agregar_encabezado(self, anio, mes = ''):
         self.reporte.agregar_seccion(f"=== Reporte mensual {mes} {anio} ===\n")
     
     def agregar_tabla_datos(self, datos_mensuales):
