@@ -1,10 +1,8 @@
-from Vehiculo import Vehiculo
 from IVehiculoBuilder import IVehiculosBuilder
 
 class CamionBuilder(IVehiculosBuilder):
     
-    def __init__(self):
-        self.vehiculo = Vehiculo()
+    
 
     def set_motor(self):
         self.vehiculo.motor = "4000 cc - Diesel"

@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
-
+from Vehiculo import Vehiculo
 
 class IVehiculosBuilder(ABC):
+    def __init__(self):
+        self.vehiculo = Vehiculo()
     
     @abstractmethod
     def set_motor(self):
