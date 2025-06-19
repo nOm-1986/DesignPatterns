@@ -1,17 +1,10 @@
-from abc import ABC, abstractmethod
 import copy
 
-class ICloneable(ABC):
-  @abstractmethod
-  def clone(self): pass
-
-
-class Monster(ICloneable, ABC):
+class Monster:
   def __init__(self, id, name):
     self.id = id
     self.name = name
 
-  @abstractmethod
   def attack(self): pass
 
   def clone(self):
