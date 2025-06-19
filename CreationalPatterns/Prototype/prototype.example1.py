@@ -13,7 +13,6 @@ class Shape(IClonable, ABC):
   @abstractmethod
   def draw(self): pass
 
-
   def clone(self):
     return copy.copy(self)
   
