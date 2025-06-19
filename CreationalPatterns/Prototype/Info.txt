@@ -1,0 +1,6 @@
+Prototype ==== Creational Pattern ====
+
+It allows you to create objects by duplicating an existing object, rather than creating a new instances from scratch
+
+When can I use it?
+It is usefull when the costs of create a new object is expensive or demand a lot of time or when we need an exact object from other one.
