@@ -2,20 +2,20 @@ from ComputadoraBuilder import ComputadoraBuilder
 
 class ComputadoraGamerBuilder(ComputadoraBuilder):
   
-  def set_cpu(self, cpu):
-    self.computadora.cpu = cpu
+  def set_cpu(self):
+    self.computadora.cpu = "Intel Core i9"
   
-  def set_gpu(self, gpu):
-    self.computadora.gpu = gpu
+  def set_gpu(self):
+    self.computadora.gpu = "NVIDIA RTX 4080"
 
-  def set_ram(self, ram):
-    self.computadora.ram = ram
+  def set_ram(self):
+    self.computadora.ram = "32GB"
 
-  def set_disco_duro(self, dd):
-    self.computadora.disco_duro = dd
+  def set_disco_duro(self):
+    self.computadora.disco_duro = "2TB SSD"
   
-  def set_fuente_poder(self, fuente):
-    self.computadora.fuente_poder = fuente
+  def set_fuente_poder(self):
+    self.computadora.fuente_poder = "850W"
   
-  def set_sistema_operativo(self, so):
-    self.computadora.sistema_operativo = so
+  def set_sistema_operativo(self):
+    self.computadora.sistema_operativo = "Windows 11"

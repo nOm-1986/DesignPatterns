@@ -7,22 +7,22 @@ class ComputadoraBuilder(ABC):
     self.computadora = Computadora()
   
   @abstractmethod
-  def set_cpu(self, cpu): pass
+  def set_cpu(self): pass
 
   @abstractmethod
-  def set_gpu(self, gpu): pass
+  def set_gpu(self): pass
 
   @abstractmethod
-  def set_ram(self, ram): pass
+  def set_ram(self): pass
 
   @abstractmethod
-  def set_disco_duro(self, dd): pass
+  def set_disco_duro(self): pass
 
   @abstractmethod
-  def set_fuente_poder(self, fuente):pass
+  def set_fuente_poder(self):pass
 
   @abstractmethod
-  def set_sistema_operativo(self, so): pass
+  def set_sistema_operativo(self): pass
 
   def get_result(self):
     return self.computadora
