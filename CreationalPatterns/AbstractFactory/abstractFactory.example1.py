@@ -1,7 +1,4 @@
 from abc import ABC, abstractmethod
-
-from abc import ABC, abstractmethod
-
 class IButton(ABC):
   @abstractmethod
   def render(self): pass
@@ -81,15 +78,15 @@ class MacFactory(IThemeFactory):
 # Window
 class WinButton(IButton):
   def render(self):
-    print("🪟 Rendering window button")
+    print("🪟  Rendering window button")
 
 class WinDropDown(IDropDown):
   def render(self):
-    print("🪟 Rendering window dropdown")
+    print("🪟  Rendering window dropdown")
 
 class WinTextBox(ITextBox):
   def render(self):
-    print("🪟 Rendering window textbox")
+    print("🪟  Rendering window textbox")
 
 
 class WindowFactory(IThemeFactory):
@@ -109,3 +106,7 @@ linux_button.render()
 win_factory = WindowFactory()
 win_drop_down = win_factory.create_drop_down()
 win_drop_down.render()
+
+mac_factory = MacFactory()
+mac_text_box = mac_factory.create_text_box()
+mac_text_box.render()
